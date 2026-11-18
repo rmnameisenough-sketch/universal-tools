@@ -82,7 +82,7 @@ $("summaryBtn").addEventListener("click", () => {
   const count = Math.max(2, Math.ceil(sentences.length * .25));
   $("summaryResult").textContent = scored.sort((a,b)=>b.score-a.score).slice(0,count).sort((a,b)=>a.i-b.i).map(x=>x.s).join(" ");
 });
-const API = "http://127.0.0.1:8000";
+const API = "https://steady-vacherin-f70a28.netlify.app"
 async function postFile(path, file, extra={}) {
   const fd = new FormData(); fd.append("file",file);
   Object.entries(extra).forEach(([k,v])=>fd.append(k,v));
