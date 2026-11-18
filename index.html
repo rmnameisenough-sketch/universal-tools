@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Suno Saathi Universal Tools — image, PDF, document, magic and everyday utilities.">
+  <title>Universal Tools | Suno Saathi Group</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#"><span class="brand-mark">SS</span><span><b>Suno Saathi Group</b><small>Universal Tools</small></span></a>
+  <span class="privacy">Your files stay on your device for browser tools</span>
+</header>
+<main class="wrap">
+  <section class="hero">
+    <p class="eyebrow">ONE WORKSPACE · MANY UTILITIES</p>
+    <h1>Everyday files.<br><em>Simpler workflows.</em></h1>
+    <p>Image, PDF, document, AI-assisted and daily utilities in one place.</p>
+    <div class="hero-pills"><span>Image Studio</span><span>PDF Studio</span><span>Document Studio</span><span>Magic Studio</span><span>Daily Utilities</span></div>
+  </section>
+
+  <section class="notice"><b>Starter build:</b> Browser-based image tools and text utilities work locally. PDF and document operations that need Python are available after starting the optional backend. Advanced features are marked as planned rather than shown as working.</section>
+
+  <section class="section-head"><div><p class="eyebrow">WORKSPACES</p><h2>Choose a toolkit</h2></div></section>
+  <div class="workspace-grid">
+    <a class="workspace-card" href="#image"><span class="card-icon">▧</span><h3>Image Studio</h3><p>Resize, compress and convert images in your browser.</p><span class="card-link">Open tools →</span></a>
+    <a class="workspace-card" href="#pdf"><span class="card-icon">▤</span><h3>PDF Studio</h3><p>Merge, split, rotate and inspect PDF files.</p><span class="card-link">Open tools →</span></a>
+    <a class="workspace-card" href="#documents"><span class="card-icon">▣</span><h3>Document Studio</h3><p>Work with text and DOCX documents.</p><span class="card-link">Open tools →</span></a>
+    <a class="workspace-card" href="#magic"><span class="card-icon">✧</span><h3>Magic Studio</h3><p>Local text summary now; AI provider can be connected later.</p><span class="card-link">Open tools →</span></a>
+    <a class="workspace-card" href="#daily"><span class="card-icon">⌘</span><h3>Daily Utilities</h3><p>Text, JSON and quick everyday helpers.</p><span class="card-link">Open tools →</span></a>
+  </div>
+
+  <section class="tool-section" id="image">
+    <div class="section-title"><span class="section-icon">▧</span><div><p class="eyebrow">01 · IMAGE STUDIO</p><h2>Image tools</h2></div></div>
+    <div class="tool-grid">
+      <article class="tool-card"><h3>Image Compressor</h3><p>Reduce image file size using browser canvas.</p><input id="imgCompressFile" type="file" accept="image/*"><label>Quality <output id="qualityOut">75%</output><input id="quality" type="range" min="10" max="100" value="75"></label><button id="compressBtn">Compress image</button><p class="result" id="compressResult">Choose an image to begin.</p></article>
+      <article class="tool-card"><h3>Image Resizer</h3><p>Resize while keeping the aspect ratio.</p><input id="imgResizeFile" type="file" accept="image/*"><div class="two-inputs"><label>Width (px)<input id="resizeWidth" type="number" min="1" placeholder="e.g. 1200"></label><label>Height (px)<input id="resizeHeight" type="number" min="1" placeholder="Auto"></label></div><button id="resizeBtn">Resize image</button><p class="result" id="resizeResult">Choose an image to begin.</p></article>
+      <article class="tool-card"><h3>Image Format Converter</h3><p>Convert to PNG, JPEG or WebP.</p><input id="imgConvertFile" type="file" accept="image/*"><select id="imageFormat"><option value="image/png">PNG</option><option value="image/jpeg">JPEG</option><option value="image/webp">WebP</option></select><button id="convertBtn">Convert image</button><p class="result" id="convertResult">Choose an image to begin.</p></article>
+    </div>
+    <p class="planned">Planned next: crop, watermark, background removal, passport photo presets, EXIF removal, palette extractor and upscaling.</p>
+  </section>
+
+  <section class="tool-section" id="pdf">
+    <div class="section-title"><span class="section-icon">▤</span><div><p class="eyebrow">02 · PDF STUDIO</p><h2>PDF tools</h2></div></div>
+    <div class="tool-grid">
+      <article class="tool-card"><h3>PDF Merge</h3><p>Combine multiple PDFs in selected order. Requires the Python backend.</p><input id="mergeFiles" type="file" accept="application/pdf" multiple><button id="mergeBtn">Merge PDFs</button><p class="result" id="mergeResult">Backend required.</p></article>
+      <article class="tool-card"><h3>PDF Page Count</h3><p>Check the number of pages in a PDF.</p><input id="pdfInfoFile" type="file" accept="application/pdf"><button id="pdfInfoBtn">Get PDF info</button><p class="result" id="pdfInfoResult">Choose a PDF.</p></article>
+      <article class="tool-card"><h3>PDF Split</h3><p>Extract a page range into a new PDF. Requires the Python backend.</p><input id="splitFile" type="file" accept="application/pdf"><div class="two-inputs"><label>From page<input id="splitFrom" type="number" min="1" value="1"></label><label>To page<input id="splitTo" type="number" min="1" value="1"></label></div><button id="splitBtn">Extract pages</button><p class="result" id="splitResult">Backend required.</p></article>
+    </div>
+    <p class="planned">Planned next: compress, rotate, reorder, PDF-to-image, image-to-PDF, OCR and table extraction. Compression quality depends on the method and file type.</p>
+  </section>
+
+  <section class="tool-section" id="documents">
+    <div class="section-title"><span class="section-icon">▣</span><div><p class="eyebrow">03 · DOCUMENT STUDIO</p><h2>Document tools</h2></div></div>
+    <div class="tool-grid">
+      <article class="tool-card"><h3>Text to DOCX</h3><p>Create a basic Word document from typed text. Requires the Python backend.</p><textarea id="docxText" rows="5" placeholder="Write or paste your text..."></textarea><button id="docxBtn">Create DOCX</button><p class="result" id="docxResult">Backend required.</p></article>
+      <article class="tool-card"><h3>DOCX to Text</h3><p>Extract paragraphs from a Word document. Requires the Python backend.</p><input id="docxFile" type="file" accept=".docx"><button id="docxReadBtn">Extract text</button><p class="result" id="docxReadResult">Choose a DOCX file.</p></article>
+      <article class="tool-card"><h3>Word Counter</h3><p>Count words, characters and lines in the browser.</p><textarea id="wordText" rows="5" placeholder="Paste text here..."></textarea><p class="result" id="wordCount">0 words · 0 characters · 0 lines</p></article>
+    </div>
+    <p class="planned">Planned next: DOCX-to-PDF, PDF-to-DOCX, CSV conversion, scanner, Hindi/English OCR and formatting tools. DOCX-to-PDF needs a server-side office converter and is not included in this starter.</p>
+  </section>
+
+  <section class="tool-section" id="magic">
+    <div class="section-title"><span class="section-icon">✧</span><div><p class="eyebrow">04 · MAGIC STUDIO</p><h2>Magic tools</h2></div></div>
+    <div class="tool-grid">
+      <article class="tool-card wide"><h3>Quick Text Summary</h3><p>Local extractive summary: selects important sentences without sending text to a server.</p><textarea id="summaryInput" rows="6" placeholder="Paste an article or notes..."></textarea><button id="summaryBtn">Create quick summary</button><div class="result" id="summaryResult">Your summary will appear here.</div></article>
+    </div>
+    <p class="planned">Planned next: AI summarization, translation and document Q&amp;A. These need a configured AI provider or an installed local model; no AI API key is included in this ZIP.</p>
+  </section>
+
+  <section class="tool-section" id="daily">
+    <div class="section-title"><span class="section-icon">⌘</span><div><p class="eyebrow">05 · DAILY UTILITIES</p><h2>Everyday helpers</h2></div></div>
+    <div class="tool-grid">
+      <article class="tool-card"><h3>JSON Formatter</h3><p>Validate and format JSON.</p><textarea id="jsonInput" rows="5" placeholder='{"hello":"world"}'></textarea><button id="jsonBtn">Format JSON</button><pre class="result" id="jsonResult">Formatted JSON appears here.</pre></article>
+      <article class="tool-card"><h3>Case Converter</h3><p>Change text case locally.</p><textarea id="caseInput" rows="5" placeholder="Type your text..."></textarea><div class="button-row"><button data-case="upper">UPPER</button><button data-case="lower">lower</button><button data-case="title">Title Case</button></div><pre class="result" id="caseResult"></pre></article>
+      <article class="tool-card"><h3>Percentage Calculator</h3><p>Calculate a percentage of a number.</p><div class="two-inputs"><label>Percent<input id="percent" type="number" placeholder="e.g. 15"></label><label>Number<input id="baseNumber" type="number" placeholder="e.g. 800"></label></div><button id="percentBtn">Calculate</button><p class="result" id="percentResult">Result appears here.</p></article>
+    </div>
+    <p class="planned">Planned next: QR generator, unit converters, date/time helpers, calculators and developer utilities.</p>
+  </section>
+</main>
+<footer><b>Universal Tools</b> · By Suno Saathi Group <span>Starter version · Expandable architecture</span></footer>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
